@@ -5,7 +5,8 @@ import { FcGoogle } from 'react-icons/fc'
 
 const Page = () => {
   const googleLoginBaseUrl = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_BASE_URL;
-  const googleLoginUrl = `${googleLoginBaseUrl}?redirect_to=http://localhost:3000/dashboard`;
+  const googleLoginUrl = `${googleLoginBaseUrl}?redirect_to=http://localhost:3000/dashboard/Email`;
+  console.log(googleLoginUrl)
   return (
     <div>
     <div className='flex items-center justify-center '>
