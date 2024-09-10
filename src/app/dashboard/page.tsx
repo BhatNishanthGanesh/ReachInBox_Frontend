@@ -8,6 +8,8 @@ const Dashboard = () => {
   const searchParams = useSearchParams();
   const token = searchParams.get('token');
 
+  
+
   return (
     <div className="flex flex-col items-center justify-center mt-20 bg-black text-white p-6">
       <div className="mb-6">
@@ -31,6 +33,7 @@ const Dashboard = () => {
         ) : (
           <p className="mt-4">Access Token not available</p>
         )} */}
+
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
         <Navbar />
 
         {/* Main content area */}
-        <main className="p-6">
+        <main>
           {children}
         </main>
       </div>
