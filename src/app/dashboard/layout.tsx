@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/app/components/navbar';
 import Sidebar from '@/app/components/sidebar';
+import ChatBotButton from '../components/chatbot';
 
 const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
@@ -16,6 +17,7 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
         {/* Main content area */}
         <main>
           {children}
+          <ChatBotButton/>
         </main>
       </div>
     </div>

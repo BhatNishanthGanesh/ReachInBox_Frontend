@@ -11,7 +11,7 @@ const Dashboard = () => {
   
 
   return (
-    <div className="flex flex-col items-center justify-center mt-20 bg-black text-white p-6">
+    <div className="flex flex-col items-center justify-center mt-20 bg-black dark:bg-white text-white p-6">
       <div className="mb-6">
         <Image
           src="/assets/emptyMail.png"
@@ -22,10 +22,10 @@ const Dashboard = () => {
         />
       </div>
       <div className="text-center">
-        <h1 className="text-3xl font-bold mb-2">
+        <h1 className="text-3xl dark:text-black font-bold mb-2">
           It’s the beginning of a legendary sales pipeline
         </h1>
-        <h3 className="text-xl">
+        <h3 className="text-xl dark:text-black">
           When you have inbound e-mails, you’ll see them here
         </h3>
         {/* {token ? (
