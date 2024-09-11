@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { MdDelete, MdReply } from 'react-icons/md';
 import { FaSearch } from 'react-icons/fa'; 
 import { AnimatePresence,motion } from "framer-motion";
 import { FiAlertCircle } from "react-icons/fi";
+import { useToken } from '../tokenContext'; 
 
 const Page = () => {
   const [emails, setEmails] = useState<any[]>([]);
@@ -23,16 +23,10 @@ const Page = () => {
   const [emailToDelete, setEmailToDelete] = useState<string | null>(null);
 
 
-  const searchParams = useSearchParams();
-  const token = searchParams.get("token");
-
+  const { token } = useToken();
+  console.log('Token in Email:', token); 
   useEffect(() => {
     const fetchEmails = async () => {
-      if (!token) {
-        setError("No token provided");
-        setLoading(false);
-        return;
-      }
 
       try {
         const response = await fetch(
@@ -182,7 +176,6 @@ const Page = () => {
         }
       ]);
 
-      // Clear the reply form
       setReplyTo("");
       setReplyFrom("");
       setReplySubject("");
@@ -195,7 +188,16 @@ const Page = () => {
     }
   };
 
-  if (loading) return <div className="text-white">Loading...</div>;
+  if (loading) return (
+    <div className="flex items-center justify-center h-screen bg-gray-900">
+      <div className="flex items-center">
+        <div className="w-8 h-8 border-4 border-t-4 border-blue-500 border-opacity-50 rounded-full animate-spin"></div>
+        <span className="ml-3 text-white text-xl font-semibold">Loading...</span>
+      </div>
+    </div>
+  );
+  
+  
   if (error) return <div className="text-red-500">Error: {error}</div>;
 
   return (
