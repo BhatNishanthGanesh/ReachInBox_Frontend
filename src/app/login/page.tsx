@@ -5,7 +5,8 @@ import { FcGoogle } from 'react-icons/fc';
 
 const Page = () => {
   const googleLoginBaseUrl = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_BASE_URL;
-  const googleLoginUrl = `${googleLoginBaseUrl}?redirect_to=http://localhost:3000/dashboard`;
+  // const googleLoginUrl = `${googleLoginBaseUrl}?redirect_to=http://localhost:3000/dashboard`;
+  const googleLoginUrl = `${googleLoginBaseUrl}?redirect_to=https://reach-in-box-frontend-coral.vercel.app/dashboard`;
 
   return (
     <div>
