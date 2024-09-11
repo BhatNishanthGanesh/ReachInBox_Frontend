@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between p-4 bg-gray-800 shadow-lg dark:bg-white dark:text-black text-white">
+    <nav className="flex items-center justify-between border-b-2 p-4 bg-gray-800 shadow-lg dark:bg-white  dark:text-black text-white">
       {/* Left side - Logo or Brand Name */}
       <div className="text-lg font-bold">
         Onebox
