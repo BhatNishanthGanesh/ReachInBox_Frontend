@@ -1,37 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ReachInBox Frontend
 
-## Getting Started
+This project is built using [Next.js](https://nextjs.org) with [Tailwind CSS](https://tailwindcss.com). The task is to develop a fully functional web app using the provided designs and APIs, following the guidelines outlined below.
 
-First, run the development server:
+## Project Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Login Page**: 
+   - Implement the login page using the provided design.
+   
+2. **Google Login**: 
+   - Upon successful login, the user should be redirected to the onebox screen located at `/google-login`.
+   
+3. **Onebox Data Fetching**:
+   - Use the following API endpoints to fetch and manage data within the onebox:
+     - `GET /onebox/list` – Retrieve the list of onebox threads.
+     - `GET /onebox/:thread_id` – Fetch data for a specific thread.
+     - `DELETE /onebox/:thread_id` – Delete a thread by its ID.
+   
+4. **Keyboard Shortcuts in Onebox**: 
+   - Implement keyboard shortcuts for a better user experience:
+     - Press **D** to delete a thread.
+     - Press **R** to open the reply box.
+   
+5. **Custom Text Editor**: 
+   - Customize the text editor by adding buttons like “SAVE” and “Variables” for additional functionality.
+   
+6. **Reply Functionality**: 
+   - Implement the reply feature. When the user clicks "send," the reply should be posted using the following API:
+     - `POST /reply/:thread_id`
+     - Example request body:
+       ```json
+       {
+         "from": "email",
+         "to": "email",
+         "subject": "",
+         "body": "<html></html>"
+       }
+       ```
+   
+7. **Light and Dark Mode**: 
+   - Implement support for both light and dark mode themes, allowing users to toggle between them.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Run the Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To set up and run the project locally, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Install Dependencies**:
+   First, install the required dependencies by running one of the following commands:
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Start the Development Server**:
+   Once the dependencies are installed, start the development server with:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **View the App in the Browser**:
+   Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-## Deploy on Vercel
+4. **Edit and Auto-Reload**:
+   You can begin making changes to the project by editing the `app/page.tsx` file. The page will auto-update as you make edits.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Additional Resources
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# ReachInBox_Frontend" 
+- **[Next.js Documentation](https://nextjs.org/docs)** – Explore Next.js features and API.
+- **[Learn Next.js](https://nextjs.org/learn)** – An interactive tutorial to deepen your understanding of Next.js.
+
+---
